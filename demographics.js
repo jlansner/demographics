@@ -38607,7 +38607,7 @@ function getDifference( newVal, oldVal ) {
 }
 
 $( document ).ready( function() {
-  data = _.sortBy( data, [ 'name' ] );
+  data = data.sort( ( a, b ) => ( a.name > b.name ) ? 1 : -1 );  
 
     var tableData, chosenData;
 
@@ -38629,13 +38629,13 @@ $( document ).ready( function() {
         edsDiff = getDifference( newEds, school1Data.eds );
 
         tableData = `<tr><td>${ school1Data.name }</td><td>${ formatNumber( school1Data.enrollment ) }</td>` +
+        `<td>${ formatPercent( school1Data.eds, school1Data.enrollment ) }</td></tr>` +
         `<td>${ formatPercent( school1Data.ell, school1Data.enrollment ) }</td>` +
         `<td>${ formatPercent( school1Data.swd, school1Data.enrollment ) }</td>` +
-        `<td>${ formatPercent( school1Data.eds, school1Data.enrollment ) }</td></tr>` +
         `<tr><td>${ school2Data.name }</td><td>${ formatNumber( school2Data.enrollment ) }</td>` +
+        `<td>${ formatPercent( school2Data.eds, school2Data.enrollment ) }</td>`;
         `<td>${ formatPercent( school2Data.ell, school2Data.enrollment ) }</td>` +
-        `<td>${ formatPercent( school2Data.swd, school2Data.enrollment ) }</td>` +
-        `<td>${ formatPercent( school2Data.eds, school2Data.enrollment ) }</td></tr>`;
+        `<td>${ formatPercent( school2Data.swd, school2Data.enrollment ) }</td></tr>` +
 
         $( "#demographicsTable tbody" ).html( tableData );
         $( "#ellDiff" ).html( ellDiff );

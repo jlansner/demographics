@@ -11,18 +11,13 @@
 <body>
 
     <div>
-
-        <p>Great disparities exist among New York schools when it comes to the numbers of at-risk students they serve, but these differences can be 
-            difficult to visualize. Type in the fields below to see how a given school, district or county would look different if it had the same demographics as another.<br / >
-            <em>Source: 2018-19 enrollment figures, <a href="https://data.nysed.gov/" target="_blank">data.nysed.gov</a>. Many thanks for Jesse Lansner for building the calculator.</em>
-            </p>
         <p>If <select name="school1" id="school1" class="chosen-select" data-placeholder="Select a school or district"></select> had the same demographics as 
             <select name="school2" id="school2"  class="chosen-select" data-placeholder="Select a school or district"></select>, it would have:</p>
 
         <ul>
+            <li><span id="edsDiff"></span> economically disadvantaged students</li>
             <li><span id="ellDiff"></span> English language learners</li>
             <li><span id="swdDiff"></span> students with disabilities</li>
-            <li><span id="edsDiff"></span> economically disadvantaged students</li>
         </ul>
 
     </div>
@@ -32,9 +27,9 @@
         <tr>
             <th>Name</th>
             <th>Enrollment</th>
+            <th>Economically disadvantaged students</th>
             <th>English language learners</th>
             <th>Students with disabilities</th>
-            <th>Economically disadvantaged students</th>
         </tr>
     </thead>
     <tbody>
